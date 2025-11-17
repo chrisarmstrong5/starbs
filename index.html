@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,391 +9,150 @@
     <link rel="preconnect" href="https://rgbad.ttrk.io">
     <link rel="dns-prefetch" href="//cycsrd.mcgo2.com">
 
-    <!-- MaxConv Tracking Script Base Code-->
-    <script>!function(w,d,o,n,c){w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments)};var s=d.createElement(n),t=d.getElementsByTagName(n)[0];s.async=!0;s.defer=!0;s.src="//cycsrd.mcgo2.com/t/t.js";t.parentNode.insertBefore(s,t);}(window,document,"maxconv","script");</script>
-    <noscript><link rel="stylesheet" href="//cycsrd.mcgo2.com/t/t.css?mc_ns=1" /></noscript>
-    <!-- End MaxConv Tracking Script Base Code-->
-    
-    <!-- TikTok Pixel Code -->
+    <!-- MaxConv Tracking Script Base Code -->
     <script>
-    !function (w, d, t) {
-        w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["track","page","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
-        ttq.load('D39E4LRC77UFKOQ7L2L0');
-        ttq.page();
-    }(window, document, 'ttq');
+        !function(w,d,o,n,c){
+            w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments)};
+            var s=d.createElement(n), t=d.getElementsByTagName(n)[0];
+            s.async=!0; s.defer=!0; s.src="//cycsrd.mcgo2.com/t/t.js";
+            t.parentNode.insertBefore(s,t);
+        }(window,document,"maxconv","script");
     </script>
-    <!-- TikTok Pixel Code End -->
-    
+    <noscript><link rel="stylesheet" href="//cycsrd.mcgo2.com/t/t.css?mc_ns=1"></noscript>
+
+    <!-- TikTok Pixel (Updated with your Pixel ID) -->
+    <script>
+        !function(w,d,t){
+            w.TiktokAnalyticsObject=t;
+            var ttq=w[t]=w[t]||[];
+            ttq.methods=["track","page","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"];
+            ttq.setAndDefer=function(t,e){
+                t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}
+            };
+            for(var i=0;i<ttq.methods.length;i++) ttq.setAndDefer(ttq,ttq.methods[i]);
+            ttq.instance=function(t){
+                for(var e=ttq._i[t]||[], n=0;n<ttq.methods.length;n++) ttq.setAndDefer(e,ttq.methods[n]);
+                return e
+            };
+            ttq.load=function(e,n){
+                var i="https://analytics.tiktok.com/i18n/pixel/events.js";
+                ttq._i=ttq._i||{}, ttq._i[e]=[], ttq._i[e]._u=i,
+                ttq._t=ttq._t||{}, ttq._t[e]=+new Date,
+                ttq._o=ttq._o||{}, ttq._o[e]=n||{};
+                var o=document.createElement("script");
+                o.type="text/javascript", o.async=!0, o.src=i+"?sdkid="+e+"&lib="+t;
+                var a=document.getElementsByTagName("script")[0];
+                a.parentNode.insertBefore(o,a)
+            };
+            ttq.load('D45OCM3C77U0CLRNMLJG');
+            ttq.page();
+        }(window, document, 'ttq');
+    </script>
+
     <!-- TikTok Event Tracking -->
     <script>
-    // Track ViewContent event when page loads
-    ttq.track('ViewContent', {
-        "contents": [
-            {
-                "content_id": "starbucks_landing_page",
-                "content_name": "Starbucks Reward Landing Page",
-                "content_category": "Coffee Rewards",
-                "content_type": "Landing Page"
-            }
-        ]
-    });
-    
-    // Track button clicks
-    function trackButtonClick(eventName) {
-        // MaxConv tracking
-        if (typeof maxconv !== 'undefined') {
-            maxconv('click');
-        }
-        
-        // TikTok tracking
-        ttq.track(eventName, {
-            "contents": [
-                {
-                    "content_id": "starbucks_landing_page",
-                    "content_name": "Starbucks Reward Landing Page",
-                    "content_category": "Coffee Rewards",
-                    "content_type": "Landing Page"
-                }
-            ]
+        // Track ViewContent
+        ttq.track('ViewContent', {
+            contents: [{
+                content_id: "starbucks_landing_page",
+                content_name: "Starbucks Reward Landing Page",
+                content_category: "Coffee Rewards",
+                content_type: "Landing Page"
+            }]
         });
-    }
+
+        // CTA click tracking
+        function trackButtonClick() {
+            // MaxConv
+            if (typeof maxconv !== 'undefined') {
+                maxconv('click');
+            }
+
+            // TikTok Pixel
+            ttq.track('ClickButton', {
+                contents: [{
+                    content_id: "starbucks_landing_page",
+                    content_name: "Starbucks Reward Landing Page",
+                    content_category: "Coffee Rewards",
+                    content_type: "Landing Page"
+                }]
+            });
+        }
     </script>
-    <!-- TikTok Event Tracking End -->
-    
+
     <style>
         :root {
-            /* Brand Colors - CUSTOMIZE THESE */
-            --primary-color: #00704a;        /* Main brand color */
-            --primary-dark: #005a3c;         /* Darker shade for hover states */
-            --primary-light: #68b49b;        /* Light accent color */
-            --card-bg: rgba(255, 255, 255, 0.98);
-
-            /* Brand Content - CUSTOMIZE THESE */
-            --brand-name: "Starbucks";       /* Brand name */
-            --amount: "$100";                 /* Dollar amount */
+            --primary-color: #00704a;
+            --primary-dark: #005a3c;
+            --primary-light: #68b49b;
+            --card-bg: rgba(255,255,255,0.98);
         }
 
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+            margin: 0; padding: 0; box-sizing: border-box;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            -webkit-tap-highlight-color: transparent;
-            -webkit-user-select: none;
             user-select: none;
         }
 
         body {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            min-height: 100vh;
-            position: relative;
-            overflow-x: hidden;
-            color: #1a1a2e;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            height: 100vh; padding: 20px;
+            display: flex; align-items: center; justify-content: center;
         }
 
-        /* Animated gradient background - REPLACES particles.js */
-        body::before {
-            content: '';
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            background:
-                radial-gradient(circle at 20% 50%, rgba(0, 204, 102, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(0, 255, 127, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 80%, rgba(0, 204, 102, 0.08) 0%, transparent 50%);
-            z-index: 1;
-            animation: gradientShift 10s ease infinite;
-        }
-
-        @keyframes gradientShift {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
-        }
-
-        /* Main card with floating animation */
         .reward-card {
             background: var(--card-bg);
             border-radius: 24px;
             padding: 1.5rem 1.2rem;
-            position: relative;
-            z-index: 2;
-            backdrop-filter: blur(10px);
+            max-width: 420px; width: 100%;
             border: 1px solid var(--primary-color);
-            border-opacity: 0.2;
-            max-width: 420px;
-            width: 100%;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.05);
-            animation: cardFloat 3s ease-in-out infinite;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
 
-        @keyframes cardFloat {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
+        .app-logo { width: 120px; height: 120px; display: block; margin: auto; }
+        .app-title { text-align:center; font-size:2rem; font-weight:800; margin-top:1rem; }
 
-        /* Accessibility: Respect prefers-reduced-motion */
-        @media (prefers-reduced-motion: reduce) {
-            .reward-card,
-            .app-logo,
-            .amount,
-            body::before {
-                animation: none !important;
-            }
-        }
+        .amount-subtext { text-align:center; margin-top:0.5rem; }
+        .amount { text-align:center; font-size:3.5rem; font-weight:800; color:var(--primary-color); }
 
-        /* App logo section */
-        .app-logo-container {
-            text-align: center;
-            margin-bottom: 1rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid #00ff7f1a;
-        }
-
-        .app-logo {
-            width: 120px;
-            height: 120px;
-            filter: drop-shadow(0 4px 12px rgba(0, 204, 102, 0.3));
-            animation: logoShine 3s infinite;
-            display: block;
-            margin: 0 auto;
-            border-radius: 24px;
-        }
-
-        @keyframes logoShine {
-            0% { filter: drop-shadow(0 4px 12px rgba(0, 204, 102, 0.3)); }
-            50% { filter: drop-shadow(0 8px 20px rgba(0, 204, 102, 0.5)); }
-            100% { filter: drop-shadow(0 4px 12px rgba(0, 204, 102, 0.3)); }
-        }
-
-        .app-title {
-            font-size: 2rem;
-            font-weight: 800;
-            margin-top: 0.8rem;
-            color: #1a1a2e;
-            text-shadow: none;
-        }
-
-        /* Money amount section */
-        .amount {
-            font-size: 3.5rem;
-            font-weight: 800;
-            text-align: center;
-            color: var(--primary-color);
-            margin: 0.3rem 0;
-            text-shadow: 0 2px 10px rgba(0, 204, 102, 0.2);
-            animation: amountPulse 2s infinite;
-            line-height: 1;
-        }
-
-        @keyframes amountPulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        .amount-subtext {
-            text-align: center;
-            font-size: 1.1rem;
-            font-weight: 500;
-            margin: 0.2rem 0;
-            color: #4a4a4a;
-            text-shadow: none;
-            letter-spacing: 0.5px;
-        }
-
-        /* Instructions container */
         .instructions-container {
-            margin: 1.2rem auto;
-            padding: 1rem;
-            background: rgba(0, 204, 102, 0.1);
+            margin-top: 1.3rem; padding: 1rem;
+            background: rgba(0,204,102,0.1);
             border-radius: 16px;
-            border: 1px solid rgba(0, 204, 102, 0.25);
         }
 
-        .instruction-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 10px 0;
-            font-size: 1rem;
-            color: #2a2a2a;
-            font-weight: 600;
-        }
-
+        .instruction-item { display:flex; gap:12px; padding:8px 0; }
         .number {
-            background: var(--primary-color);
-            color: #ffffff;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.9rem;
-            font-weight: 700;
-            box-shadow: 0 2px 8px rgba(0, 204, 102, 0.3);
-            flex-shrink: 0;
+            background: var(--primary-color); color:#fff;
+            width:28px; height:28px; border-radius:50%;
+            display:flex; align-items:center; justify-content:center;
         }
 
-        /* CTA Button */
         .claim-button {
-            background: var(--primary-color);
-            color: #ffffff;
-            border: none;
-            padding: 1.1rem;
-            border-radius: 50px;
-            font-weight: 800;
-            font-size: 1.2rem;
-            width: 100%;
-            cursor: pointer;
-            margin: 1.2rem auto 0.8rem;
-            display: block;
-            box-shadow: 0 10px 30px rgba(0, 204, 102, 0.4), 0 5px 15px rgba(0, 204, 102, 0.3);
-            transition: all 0.3s ease;
-            text-decoration: none;
-            text-align: center;
-            animation: ctaPulse 2.5s ease-in-out infinite;
+            background:var(--primary-color); color:#fff;
+            border:none; padding:1.1rem;
+            width:100%; border-radius:50px;
+            font-size:1.3rem; font-weight:800;
+            text-align:center; margin-top:1.3rem;
+            text-decoration:none; display:block;
         }
 
-        @keyframes ctaPulse {
-            0%, 100% {
-                box-shadow: 0 10px 30px rgba(0, 204, 102, 0.4), 0 5px 15px rgba(0, 204, 102, 0.3);
-                transform: scale(1);
-            }
-            50% {
-                box-shadow: 0 15px 40px rgba(0, 204, 102, 0.6), 0 0 0 4px rgba(0, 204, 102, 0.15);
-                transform: scale(1.02);
-            }
-        }
-
-        .claim-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 204, 102, 0.5), 0 8px 20px rgba(0, 204, 102, 0.4);
-        }
-
-        .claim-button:active {
-            transform: translateY(-2px);
-        }
-
-        /* Trust badge */
-        .trust-badge {
-            width: 150px;
-            max-width: 50%;
-            height: auto;
-            margin: 0.8rem auto 0;
-            opacity: 0.85;
-            transition: opacity 0.3s ease;
-            display: block;
-        }
-
-        .trust-badge:hover {
-            opacity: 1;
-        }
-
-        /* Notification styles */
         .notification {
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%) translateY(-100%);
-            background: rgba(255, 255, 255, 0.98);
-            padding: 15px 20px;
-            border-radius: 12px;
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 14px;
-            color: #1a1a2e;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 204, 102, 0.3);
-            transition: transform 0.3s ease;
-            max-width: 320px;
-            width: calc(100% - 2rem);
+            position:fixed; top:20px; left:50%;
+            transform:translateX(-50%) translateY(-100%);
+            padding:15px; border-radius:12px;
+            background:#fff; box-shadow:0 12px 40px rgba(0,0,0,0.15);
+            transition:0.3s; width:320px; max-width:90%;
+            display:flex; gap:12px; z-index:1000;
         }
-
-        .notification.show {
-            transform: translateX(-50%) translateY(0);
-        }
-
-        .notification-icon {
-            width: 30px;
-            height: 30px;
-            background: var(--primary-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ffffff;
-            font-size: 14px;
-            flex-shrink: 0;
-        }
-
-        .notification-content {
-            flex: 1;
-        }
-
-        .notification-title {
-            font-weight: 600;
-            margin-bottom: 2px;
-            color: #1a1a2e;
-        }
-
-        .notification-text {
-            color: #4a4a4a;
-            font-size: 13px;
-        }
-
-        /* Mobile optimizations */
-        @media (max-width: 380px) {
-            .reward-card {
-                padding: 1.2rem 1rem;
-            }
-            
-            .app-logo {
-                width: 100px;
-                height: 100px;
-            }
-            
-            .app-title {
-                font-size: 1.8rem;
-            }
-            
-            .amount {
-                font-size: 2.2rem;
-            }
-            
-            .amount-subtext {
-                font-size: 1.1rem;
-            }
-            
-            .instruction-item {
-                font-size: 0.95rem;
-            }
-            
-            .claim-button {
-                font-size: 1.1rem;
-                padding: 1rem;
-            }
-        }
+        .notification.show { transform:translateX(-50%) translateY(0); }
     </style>
 </head>
+
 <body>
-    <!-- Main container -->
     <div class="reward-card">
         <div class="app-logo-container">
-            <!-- CUSTOMIZE: Replace with your brand logo (120x120px PNG, < 100KB) -->
-            <img src="starbucks.png"
-                 alt="Starbucks logo"
-                 class="app-logo"
-                 width="120"
-                 height="120">
+            <img src="starbucks.png" class="app-logo" alt="Starbucks logo">
             <div class="app-title">Starbucks</div>
         </div>
 
@@ -403,117 +161,66 @@
         <div class="amount-subtext">per offer</div>
 
         <div class="instructions-container">
-            <div class="instruction-item">
-                <span class="number">1</span>
-                <span>Click the Button Below</span>
-            </div>
-            <div class="instruction-item">
-                <span class="number">2</span>
-                <span>Join Starbucks Rewards<br>(free to join)</span>
-            </div>
-            <div class="instruction-item">
-                <span class="number">3</span>
-                <span>Complete simple tasks and earn money</span>
-            </div>
-            <div class="instruction-item">
-                <span class="number">4</span>
-                <span>Pro tip: Maximize your earnings by completing multiple offers daily</span>
-            </div>
+            <div class="instruction-item"><span class="number">1</span> Click the Button Below</div>
+            <div class="instruction-item"><span class="number">2</span> Join Starbucks Rewards</div>
+            <div class="instruction-item"><span class="number">3</span> Complete simple tasks</div>
+            <div class="instruction-item"><span class="number">4</span> Maximize earnings daily</div>
         </div>
 
-        <a href="https://rgbad.ttrk.io/click" class="claim-button" onclick="trackButtonClick('ClickButton')">
+        <a href="https://rgbad.ttrk.io/click" class="claim-button" onclick="trackButtonClick()">
             Start Earning Now →
         </a>
-
     </div>
 
     <script>
-        // Counter animation
         function animateValue(element, start, end, duration) {
             let startTimestamp = null;
             const step = (timestamp) => {
                 if (!startTimestamp) startTimestamp = timestamp;
                 const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                const currentValue = progress * (end - start) + start;
-                element.textContent = currentValue.toFixed(2);
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                }
+                element.textContent = (progress * (end - start) + start).toFixed(2);
+                if (progress < 1) window.requestAnimationFrame(step);
             };
             window.requestAnimationFrame(step);
         }
 
-        // Start counter animation on load
-        window.addEventListener('load', function() {
-            const counterElement = document.getElementById('counter');
-            animateValue(counterElement, 0, 1340, 2000);
-        });
+        window.onload = function() {
+            animateValue(document.getElementById("counter"), 0, 1340, 2000);
+        };
+    </script>
 
-        // Notification names - more diverse and realistic
+    <script>
         const NAMES = [
-            'Jayden K.', 'Aaliyah M.', 'Carlos R.', 'Destiny W.', 'Malik J.',
-            'Kiara T.', 'Ethan Z.', 'Jasmine L.', 'Diego S.', 'Trinity B.',
-            'Aiden P.', 'Camila V.', 'Jordan C.', 'Ariana G.', 'Mason D.',
-            'Zoe H.', 'Isaiah N.', 'Gabriella F.', 'Liam O.', 'Sophia Y.',
-            'DeAndre W.', 'Fatima A.', 'Kai L.', 'Luna R.', 'Javier M.',
-            'Amara K.', 'Tyrese B.', 'Valentina C.', 'Ryder T.', 'Naomi S.',
-            'Dante P.', 'Aliyah J.', 'Mateo G.', 'Khloe D.', 'Jamal H.',
-            'Zara N.', 'Phoenix R.', 'Layla M.', 'Nico V.', 'Amelia K.',
-            'Darius L.', 'Sienna W.', 'Ezra B.', 'Maya T.', 'Kingston J.',
-            'Nyla F.', 'Roman S.', 'Eliana C.', 'Kayden M.', 'Aubrey P.'
+            "Jayden K.","Aaliyah M.","Carlos R.","Destiny W.","Malik J.","Kiara T.",
+            "Ethan Z.","Jasmine L.","Diego S.","Trinity B.","Aiden P.","Camila V."
         ];
+        const STATES = ["CA","TX","FL","NY","PA","IL","OH","GA","NC","MI"];
 
-        // Most popular US states
-        const STATES = [
-            'CA', 'TX', 'FL', 'NY', 'PA', 'IL', 'OH', 'GA', 'NC', 'MI',
-            'NJ', 'VA', 'WA', 'AZ', 'MA', 'TN', 'IN', 'MD', 'MO', 'WI',
-            'CO', 'MN', 'SC', 'AL', 'LA', 'KY', 'OR', 'OK', 'CT', 'NV'
-        ];
-
-        // Create notification function
         function createNotification() {
-            const notification = document.createElement('div');
-            notification.className = 'notification';
-            
-            // Get random name and state
-            const randomName = NAMES[Math.floor(Math.random() * NAMES.length)];
-            const randomState = STATES[Math.floor(Math.random() * STATES.length)];
-            
-            // Generate random amount between $20 and $100
-            const randomAmount = (Math.random() * 80 + 20).toFixed(2);
-            
-            notification.innerHTML = `
-                <div class="notification-icon">💵</div>
-                <div class="notification-content">
-                    <div class="notification-title">Recent Claim</div>
-                    <div class="notification-text">${randomName} from ${randomState} claimed ${randomAmount}!</div>
+            const name = NAMES[Math.floor(Math.random()*NAMES.length)];
+            const state = STATES[Math.floor(Math.random()*STATES.length)];
+            const amount = (Math.random()*80+20).toFixed(2);
+
+            const div = document.createElement("div");
+            div.className = "notification";
+            div.innerHTML = `
+                <div>💵</div>
+                <div>
+                    <strong>Recent Claim</strong><br>
+                    ${name} from ${state} claimed $${amount}
                 </div>
             `;
-            
-            document.body.appendChild(notification);
-            
-            // Show notification
-            setTimeout(() => {
-                notification.classList.add('show');
-            }, 100);
-            
-            // Hide and remove notification
-            setTimeout(() => {
-                notification.classList.remove('show');
-                setTimeout(() => {
-                    notification.remove();
-                }, 300);
-            }, 5000);
+            document.body.appendChild(div);
+
+            setTimeout(()=>div.classList.add("show"),100);
+            setTimeout(()=>{ div.classList.remove("show"); setTimeout(()=>div.remove(),300); },5000);
         }
 
-        // Start notifications
-        setTimeout(() => {
+        setTimeout(()=>{
             createNotification();
-            setInterval(() => {
-                createNotification();
-            }, Math.random() * 4000 + 8000);
-        }, 3000);
-
+            setInterval(()=>createNotification(), Math.random()*4000+8000);
+        },3000);
     </script>
+
 </body>
 </html>
