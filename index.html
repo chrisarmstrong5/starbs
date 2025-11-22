@@ -109,6 +109,62 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
 
+        .hidden {
+            display: none !important;
+        }
+
+        /* Age Verification Styles */
+        .age-verification-card {
+            text-align: center;
+        }
+
+        .age-verification-card .app-logo {
+            width: 120px; height: 120px; display: block; margin: auto;
+        }
+
+        .age-verification-card .app-title {
+            text-align:center; font-size:2rem; font-weight:800; margin-top:1rem;
+        }
+
+        .verification-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .verification-question {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 2rem;
+        }
+
+        .verification-button {
+            background: var(--primary-color);
+            color: #fff;
+            border: none;
+            padding: 1.1rem;
+            width: 100%;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 800;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .verification-button:hover {
+            background: var(--primary-dark);
+            transform: scale(1.02);
+        }
+
+        .verification-button:active {
+            transform: scale(0.98);
+        }
+
+        /* Main Landing Page Styles */
         .app-logo { width: 120px; height: 120px; display: block; margin: auto; }
         .app-title { text-align:center; font-size:2rem; font-weight:800; margin-top:1rem; }
 
@@ -150,7 +206,21 @@
 </head>
 
 <body>
-    <div class="reward-card">
+    <!-- Age Verification Page -->
+    <div id="ageVerification" class="reward-card age-verification-card">
+        <img src="starbucks.png" class="app-logo" alt="Starbucks logo">
+        <div class="app-title">Starbucks</div>
+
+        <div class="verification-title">Quick Eligibility Check</div>
+        <div class="verification-question">Are you at least 18 years old?</div>
+
+        <button class="verification-button" onclick="continueToMain()">
+            Yes, Continue →
+        </button>
+    </div>
+
+    <!-- Main Landing Page (Initially Hidden) -->
+    <div id="mainContent" class="reward-card hidden">
         <div class="app-logo-container">
             <img src="starbucks.png" class="app-logo" alt="Starbucks logo">
             <div class="app-title">Starbucks</div>
@@ -161,18 +231,27 @@
         <div class="amount-subtext">Starbucks Gift Card</div>
 
         <div class="instructions-container">
-            <div class="instruction-item"><span class="number">1</span> Click the Button Below</div>
-            <div class="instruction-item"><span class="number">2</span> Join Starbucks Rewards</div>
-            <div class="instruction-item"><span class="number">3</span> Complete simple tasks</div>
-            <div class="instruction-item"><span class="number">4</span> Maximize earnings daily</div>
+            <div class="instruction-item"><span class="number">1</span> Click the "Sign Up" to start</div>
+            <div class="instruction-item"><span class="number">2</span> Provide a valid email address</div>
+            <div class="instruction-item"><span class="number">3</span> Complete 3-5 recommended deals</div>
+            <div class="instruction-item"><span class="number">4</span> Start receiving your Starbucks rewards</div>
         </div>
 
         <a href="https://glitchy.go2cloud.org/aff_c?offer_id=569&aff_id=15664" class="claim-button" onclick="trackButtonClick()">
-            Start Earning Now →
+            Sign Up →
         </a>
     </div>
 
     <script>
+        // Function to continue to main page after age verification
+        function continueToMain() {
+            document.getElementById('ageVerification').classList.add('hidden');
+            document.getElementById('mainContent').classList.remove('hidden');
+
+            // Start counter animation after showing main content
+            animateValue(document.getElementById("counter"), 0, 100, 2000);
+        }
+
         function animateValue(element, start, end, duration) {
             let startTimestamp = null;
             const step = (timestamp) => {
@@ -183,10 +262,6 @@
             };
             window.requestAnimationFrame(step);
         }
-
-        window.onload = function() {
-            animateValue(document.getElementById("counter"), 0, 100, 2000);
-        };
     </script>
 
     <script>
